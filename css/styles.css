@@ -161,9 +161,10 @@ label[for="click"] {
 
   .navigation-search-input:focus {
     background: rgba(0, 0, 0, 1);
-    color: rgba(7, 211, 244, 0.57);
+    color: rgba(7, 211, 244);
     border: none;
     outline: none;
+    font-weight: 500;
   }
   /*navigation search ends*/
   /*responsive navigation*/
@@ -544,6 +545,7 @@ label[for="click"] {
     box-sizing: border-box;
     margin: 0;
     padding: 5rem 0rem 0rem;
+    position: relative;
   }
 
   .clients-section-heading{
@@ -569,17 +571,21 @@ label[for="click"] {
     overflow: hidden;
   }
 
-  .client-testimonial{
+  .client-testimonial {
     position: absolute;
-    height: ;
+    height: 100%;
     width: 100%;
     top: 0;
     left: 0%;
-    /*animation-name: "animate-slider";
-    animation-duration: 20s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-    animation-direction: alternate;*/
+    animation-name: "animate-slider"; 
+    animation-duration: 35s; 
+    animation-iteration-count: infinite; 
+    animation-timing-function: ease-in-out; 
+    animation-direction: alternate; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .client-testimonial:nth-child(2){
@@ -596,77 +602,118 @@ label[for="click"] {
     /*animation-play-state: paused;*/
   }
 
+  .client-comment{
+    font-size: 2.3rem;
+  }
+
   @keyframes animate-slider{
     0%{left: 0%}
-    13%{left: 0%}
-    26%{left: -100%}
-    39%{left: -100%}
-    52%{left: -200%}
-    65%{left: -200%}
-    78%{left: -200%}
-    91%{left: -300%}
+    8.33%{left: 0%}
+    16.5%{left: 0%}
+    25%{left: -100%}
+    33.33%{left: -100%}
+    41.5%{left: -100%}
+    50%{left: -200%}
+    58.33%{left: -200%}
+    64.5%{left: -200%}
+    75%{left: -300%}
+    83.33%{left: -300%}
+    91.5%{left: -300%}
     100%{left: -300%}
   }
 
   .client-img{
     margin-bottom: 0.5rem;
   }
-  .client-img img{
-    width: 10rem;
-    height: 10rem;
+  .client-img img {
+    width: 100%;
+    height: 20rem;
     border-radius: 50%;
+    box-shadow: 0.2rem 0.2rem 0.3rem 0.1rem var(--primary-color);
   }
 
   .client-text {
     text-align: center;
-    font-size: 1.7rem;
   }
 
   .client-text p,h5{
     margin: 0.5rem 0rem;
   }
 
-  .client-text p:first-child::before,.client-text p:first-child::after{
+  .client-comment:first-child::before,.client-comment:first-child::after{
     content: "\"";
+  }
+
+  .client-name{
+    font-size: 1.8rem;
+    text-transform: capitalize;
+  }
+  .client-name::before{
+    content: "- ";
+  }
+
+  .clients-view{
+    position: absolute;
+    bottom: 5rem;
+  }
+
+  .clients-view button{
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    font-size: 1.5rem;
+    padding: 0.5em 1em;
+    border-radius: 2rem;
+    margin: 0.5rem 0rem;
+    text-transform: capitalize;
+    color: rgb(40, 123, 174);
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+
+  .clients-view button:active{
+    transform: translateY(0.5rem);
+    border-color: var(--primary-color);
   }
 /*clients ends*/
 
 /*responsive*/
-@media screen and ((min-width: 630px) and (max-width: 767px)) {
-  html {
-    font-size: 52.5%;
+  @media screen and ((min-width: 630px) and (max-width: 767px)) {
+    html {
+      font-size: 52.5%;
+    }
   }
-}
-@media screen and ((min-width: 556px) and (max-width: 629px)) {
-  html {
-    font-size: 44.5%;
+  @media screen and ((min-width: 556px) and (max-width: 629px)) {
+    html {
+      font-size: 44.5%;
+    }
   }
-}
-@media screen and (max-width: 555px) {
-  html {
-    font-size: 44.5%;
-  }
-  .navigation-bar {
-    justify-content: space-around;
-  }
+  @media screen and (max-width: 555px) {
+    html {
+      font-size: 44.5%;
+    }
+    .navigation-bar {
+      justify-content: space-around;
+    }
 
-  label[for="click"] {
-    display: block;
-  }
-  .navigation-search,
-  .navigation-list {
-    display: none;
-  }
+    label[for="click"] {
+      display: block;
+    }
+    .navigation-search,
+    .navigation-list {
+      display: none;
+    }
 
-  .checkbox:checked ~ .responsive-menu {
-    display: block;
-  }
-  .header-paragraph {
-    font-size: 2.1rem;
-  }
+    .checkbox:checked ~ .responsive-menu {
+      display: block;
+    }
+    .header-paragraph {
+      font-size: 2.1rem;
+    }
 
-  .header-btn {
-    font-size: 1.5rem;
+    .header-btn {
+      font-size: 1.5rem;
+    }
   }
-}
 /*responsive ends*/
