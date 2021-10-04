@@ -8,12 +8,15 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
+*{
   margin: 0;
   padding: 0;
   border: none;
   outline: none;
+}
+body{
   background-color: #a4b4d9;
+
 }
 h3 {
   font-size: 2.8rem;
@@ -40,6 +43,35 @@ h4 {
 
 label[for="click"] {
   display: none;
+}
+
+#fixed-top-btn{
+  display: none;
+  position: fixed;
+  bottom: 5rem;
+  right: 5rem;
+  width: 4rem;
+  height: 4rem;
+  border: 0.3rem solid var(--primary-color);
+  z-index: 4;
+  /*display: flex;*/
+  justify-content: center;
+  align-items: flex-end;
+  border-radius: 50%;
+  background: ghostwhite;
+}
+
+.on-top-btn {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 1.7rem;
+  animation: top-btn-animation 1s ease-in-out infinite alternate;
+}
+
+@keyframes top-btn-animation{
+  from{
+    transform: translateY(-50%);
+  }
 }
 
 /*navigation bar*/
@@ -301,11 +333,12 @@ label[for="click"] {
     border-radius: 2rem;
     margin: 0.5rem 0rem;
     animation: header-content-animation 0.5s 2s backwards;
-    transition: all 0.5s;
+    transition: all 0.3s;
     text-transform: capitalize;
     color: #0adaf0;
     font-weight: 500;
     letter-spacing: 0.1rem;
+    text-decoration: none;
   }
 
   .header-btn:hover {
@@ -314,6 +347,8 @@ label[for="click"] {
   }
   .header-btn:active {
     transform: translateY(0.5rem);
+    box-shadow: 0rem 10rem 0.1rem 0.1rem rgba(7, 211, 244, 0.57);
+    text-shadow: 0rem 9rem rgb(9, 231, 242);
   }
 
   @keyframes header-content-animation {
@@ -400,22 +435,37 @@ label[for="click"] {
   }
 
   .about-me-image-1 {
-    animation: about-me-image-1 0.5s ease-in 1s forwards;
+    animation-duration: 0.5s; 
+    animation-timing-function: ease-in;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
   }
   .about-me-image-2 {
-    animation: about-me-image-2 1.4s ease-in 1s forwards;
+    animation-duration:  1.4s; 
+    animation-timing-function: ease-in;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
   }
   .about-me-image-3 {
     z-index: +7;
     box-shadow: none;
     width: 25rem;
-    animation: about-me-image-3 1.1s ease-in 1s forwards;
+    animation-duration: 1.1s; 
+    animation-timing-function: ease-in;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
   }
   .about-me-image-4 {
-    animation: about-me-image-4 1.7s ease-in 1s forwards;
+    animation-duration: 1.7s; 
+    animation-timing-function: ease-in;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
   }
   .about-me-image-5 {
-    animation: about-me-image-5 0.8s ease-in 1s forwards;
+    animation-duration: 0.8s; 
+    animation-timing-function: ease-in;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
   }
 
   @keyframes about-me-image-1 {
@@ -467,12 +517,12 @@ label[for="click"] {
     align-items: center;
     background: rgba(0, 0, 0, 1);
   }
-  .service-container-heading {
+  .service-container-heading, .reach-me-container-heading {
     /*color: ghostwhite;*/
     margin-top: 5.5rem;
     margin-bottom: 1rem;
   }
-  .service-container-heading::after {
+  .service-container-heading::after,.reach-me-container-heading::after {
     content: "";
     display: block;
     width: 50%;
@@ -677,6 +727,163 @@ label[for="click"] {
     border-color: var(--primary-color);
   }
 /*clients ends*/
+/*reach me*/
+  .reach-me{
+    background-color: rgba(0,0,0,1);
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .reach-me-middle-container {
+    display: flex;
+     height: 60%; 
+    justify-content: space-evenly;
+    width: 100%;
+    padding-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .reach-me-form,.reach-me-address,
+  .reach-me-map{
+    width: 30%;
+  }
+
+  .reach-me-map{
+    height: 20rem;
+  }
+
+  .reach-me-address{
+   color: ghostwhite;
+   font-size: 1.4rem;
+   /*font-style: italic;*/
+   text-transform: capitalize;
+  }
+
+  .reach-me-address p{
+    margin: 1rem 0rem;
+  }
+
+  .reach-me-form {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+    align-items: center;
+  }
+
+  .reach-me-form-input {
+    width: 80%;
+    line-height: 2rem;
+    padding: 0.8rem;
+    border-radius: 1rem;
+    margin-bottom: 0.5rem;
+    border: 0.1rem solid ghostwhite;
+    background: transparent;
+    color: ghostwhite;
+    font-family: serif;
+    font-size: 1.2rem;
+  }
+  .reach-me-form-textarea {
+    font-family: serif;
+    font-size: 1.4rem;
+    width: 80%;
+    border-radius: 1rem;
+    padding: 0.8rem;
+    border: 0.1rem solid ghostwhite;
+    background: transparent;
+    color: ghostwhite;
+    margin-bottom: 0.3rem;
+  }
+  .reach-me-form-input::placeholder,.reach-me-form-textarea::placeholder{
+    text-transform: capitalize;
+  }
+  .reach-me-send-btn {
+    width: 40%;
+    padding: 0.5em 1em;
+    font-size: 1.4rem;
+    border-radius: 1rem;
+    background: transparent;
+    color: var(--primary-color);
+    text-transform: capitalize;
+    border: 0.1rem solid ghostwhite;
+    outline: none;
+    transition: box-shadow 0.3s, background 0.3s, border 0.3s;
+  }
+
+  .reach-me-send-btn:hover {
+    background: var(--primary-color);
+    color: black;
+    border: 0.1rem solid var(--primary-color);
+    box-shadow: 0.1rem 0.1rem 2rem 0.1rem var(--primary-color);
+  }
+
+  .reach-me-bottom-container {
+    background: #0e0f0f;
+    height: 15%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .subscription-form {
+    width: 35%;
+    text-align: center;
+  }
+
+  .subscription-input {
+    width: 75%;
+    padding: 0.5rem 0.5rem;
+    border: 0.1rem solid rgb(248, 248, 255, 0.2);
+    border-radius: 0.5rem;
+    color: GHOSTWHITE;
+    background: transparent;
+    transition: border 0.5s;
+  }
+
+  .subscription-input:focus {
+    border: 0.1rem thin var(--primary-color);
+  }
+
+  .subscription-btn {
+    padding: 0.5rem 0.5rem;
+    border: 0.1rem solid rgba(248, 248, 255, 0.2);
+    border-radius: 0.5rem;
+    color: GHOSTWHITE;
+    background: #313131;
+  }
+
+  .subscription-btn {
+    padding: 0.5rem 1rem;
+    border: 0.1rem solid rgba(248, 248, 255, 0.2);
+    border-radius: 0.5rem;
+    color: GHOSTWHITE;
+    background: #313131;
+    transition: box-shadow 0.5s, color 0.5s;
+  }
+
+  .subscription-btn:hover {
+    box-shadow: 0.1rem 0.1rem 2rem 0.1rem rgba(248, 248, 255, 0.2);
+    color: var(--primary-color);
+  }
+
+
+/*reach me ends*/
+
+/*footer*/
+.footer {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #999;
+}
+
+.copyright-text{
+   font-size: 1.3rem;
+   color: #393535;
+   text-transform: capitalize;
+ }
+/*footer ends*/
 
 /*responsive*/
   @media screen and ((min-width: 630px) and (max-width: 767px)) {

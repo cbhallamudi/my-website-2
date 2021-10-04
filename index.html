@@ -10,6 +10,11 @@
 	<link rel="stylesheet" href="./css/styles.css" type="text/css">
 </head>
 <body>
+	<nav id="fixed-top-btn">
+		<a href="#home" class="on-top-btn">
+			<i class="fas fa-arrow-up"></i>
+		</a>
+	</nav>
 	<!-- navigation bar -->
 	<nav class="main-container">
 		<input type="checkbox" id="click" class="checkbox">
@@ -26,7 +31,7 @@
 				<li class="nav-item"><a href="#about-me" class="nav-link">about me</a></li>
 				<li class="nav-item"><a href="#services" class="nav-link">services</a></li>
 				<li class="nav-item"><a href="#clients" class="nav-link">clients</a></li>
-				<li class="nav-item"><a href="#contact" class="nav-link">reach me</a></li>
+				<li class="nav-item"><a href="#reach-me" class="nav-link">reach me</a></li>
 			</ul>
 			<form class="navigation-search">
 				<input type="text" class="navigation-search-input" placeholder="search here...">
@@ -41,7 +46,7 @@
 				<li class="nav-item"><a href="#about-me" class="nav-link">about me</a></li>
 				<li class="nav-item"><a href="#services" class="nav-link">services</a></li>
 				<li class="nav-item"><a href="#clients" class="nav-link">clients</a></li>
-				<li class="nav-item"><a href="#contact" class="nav-link">reach me</a></li>
+				<li class="nav-item"><a href="#reach-me" class="nav-link">reach me</a></li>
 			</ul>
 			<form class="responsive-navigation-search">
 				<input type="text" class="navigation-search-input" placeholder="search here...">
@@ -53,11 +58,11 @@
 	</nav>	
 	<!-- navigation bar ends -->
 	<!-- header -->
-	<header class="main-container" id="home">
+	<header class="main-container home" id="home">
 		<h1 class="header-heading">BCV</h1>
 		<p class="header-paragraph">
 			<span class="header-p-span">b</span>eautiful <span class="header-p-span">c</span>reative & <span class="header-p-span">v</span>ersatile</p>
-		<button class="header-btn">check out</button>
+		<button class="header-btn" onclick="delayscroll()">check out</button>
 	</header>
 	<!-- header ends -->
 	<!-- about -->
@@ -70,11 +75,11 @@
 			</p>
 		</div>
 		<div class="about-me-right-content">
-				<img class="about-me-images about-me-image-1" src="./images/web-development.png" alt="web development">
-				<img class="about-me-images about-me-image-2" src="./images/website-maintenance.png" alt="website maintenance">
-				<img class="about-me-images about-me-image-3" src="./images/solutions-word.jpg" alt="digital marketing & branding">
-				<img class="about-me-images about-me-image-4" src="./images/Digital-Marketing.png" alt="digital marketing & branding">
-				<img class="about-me-images about-me-image-5" src="./images/Domain-hosting.png" alt="domain & hosting">
+				<img class="about-me-images about-me-image-1" id="abt-img-1" src="./images/web-development.png" alt="web development">
+				<img class="about-me-images about-me-image-2" id="abt-img-2" src="./images/website-maintenance.png" alt="website maintenance">
+				<img class="about-me-images about-me-image-3" id="abt-img-3" src="./images/solutions-word.jpg" alt="digital marketing & branding">
+				<img class="about-me-images about-me-image-4" id="abt-img-4" src="./images/Digital-Marketing.png" alt="digital marketing & branding">
+				<img class="about-me-images about-me-image-5" id="abt-img-5" src="./images/Domain-hosting.png" alt="domain & hosting">
 		</div>
 	</section>					
 	<!-- about ends -->
@@ -169,8 +174,48 @@
 	</section>	
 	<!-- clients ends -->
 	<!-- reach me -->	
-		
+	<section class="reach-me" id="reach-me">
+		<h3 class="reach-me-container-heading">here i am</h3>
+		<div class="reach-me-middle-container">
+			<div class="reach-me-address">
+				<p>telephone: +91 7093059081</p>
+				<p>email: cbhallamudi@gmail.com</p>
+				<address>
+				  <p>401, 10-13/1/16,</p>
+				  <p>lakshmi kamalasree paradise, chanukyanagar,</p>
+				  <p>pathavooru, chinnamushidiwada,</p>
+				  <p>viskahapatnam.</p>
+				  <p>530051</p>
+				</address>
+
+			</div>
+			<form action="#" class="reach-me-form">
+				<input type="text" name="" id="" class="reach-me-form-input" placeholder="name">
+				<input type="email" name="" id="" class="reach-me-form-input" placeholder="email">
+				<textarea name="" id="" cols="30" rows="5" placeholder="your message" class="reach-me-form-textarea"></textarea>
+				<button class="reach-me-send-btn">hit me</button>
+			</form>
+			<iframe class="reach-me-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1267.672497568418!2d83.2040416428915!3d17.804632524323733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xea261df2965eebc5!2sLakshmi%20Kamala%20Sree%20Paradise!5e0!3m2!1sen!2sin!4v1633161769312!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>	
+		</div>
+		<div class="reach-me-bottom-container">
+			<form action="#" class="subscription-form">
+				<input type="text" class="subscription-input" placeholder="enter email id">
+				<input type="submit" value="subscribe" class="subscription-btn">
+			</form>
+			
+		</div>
+	</section>
 	<!-- reach me ends -->	
+	<!-- footer -->
+	<footer class="footer">
+		<div class="copyright-text">
+			<p>copy right &copy; 
+				<script>document.write(new Date().getFullYear());</script>.
+				BCV. all rights registered &reg;
+			</p>
+		</div>	 
+	</footer>
+	<!-- footer ends -->
 	<script src="./javascript/custom_js.js"></script>
 </body>
 </html>
